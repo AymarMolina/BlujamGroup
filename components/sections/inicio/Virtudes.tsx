@@ -32,10 +32,10 @@ const words = ["BLUJAMGROUP", "BLUJAMGROUP", "BLUJAMGROUP", "BLUJAMGROUP", "BLUJ
 
 const VirtudesMarquee = () => {
   const [currentCard, setCurrentCard] = useState(0);
-  const [prevCardIdx, setPrevCardIdx] = useState(null);
+  const [prevCardIdx, setPrevCardIdx] = useState<number | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const [direction, setDirection] = useState("down"); 
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const prevCardRef = useRef(0);
 
   useEffect(() => {
@@ -157,7 +157,7 @@ const VirtudesMarquee = () => {
   );
 };
 
-const CardContent = ({ card }) => (
+const CardContent = ({ card }: { card: typeof cards[0] }) => (
   <div className="grid grid-cols-1 md:grid-cols-10 gap-12 p-12 md:p-15 w-full h-full items-center">
     <div className="md:col-span-4 h-full max-h-[400px] md:max-h-full bg-gray-800/50 border border-white/5 overflow-hidden shadow-inner">
       <img
