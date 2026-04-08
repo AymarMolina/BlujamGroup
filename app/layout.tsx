@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Michroma,Rajdhani, Scheherazade_New} from "next/font
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import ScrollToTop from "@/components/ui/ScrollToTop";
+import WhatsAppChat from "@/components/ui/WhatsAppChat";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,7 +50,8 @@ export default function RootLayout({
         <main className="flex-grow">
           {children}
         </main>
-        
+        <WhatsAppChat />
+        <ScrollToTop />
         <Footer />
       </body>
     </html>

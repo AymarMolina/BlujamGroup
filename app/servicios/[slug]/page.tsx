@@ -324,10 +324,16 @@ export default function DetalleServicio({ params }: { params: Promise<{ slug: st
 
             <div className="bg-[#FE7F0E] p-[1px] group transition-transform hover:-translate-y-1">
                <button 
+               onClick={() =>
+                  window.open(
+                    `https://wa.me/51970478503?text=${encodeURIComponent("Hola, me gustaría contactarlos para más información.")}`,
+                    "_blank"
+                  )
+                }
                  style={{fontFamily: "var(--font-michroma)"}} 
                  className="w-full bg-[#000A15] text-white py-8 text-[11px] tracking-[4px] font-bold group-hover:bg-transparent group-hover:text-black transition-all uppercase"
                 >
-                 Solicitar Auditoría
+                 Solicitar Cotizacion
                </button>
             </div>
             

@@ -78,10 +78,10 @@ export default function ContactoPage() {
                     <textarea rows={3} placeholder="¿Cómo podemos colaborar?" className="bg-transparent w-full outline-none text-xl font-bold resize-none" style={{ fontFamily: "var(--font-rajdhani)" }}></textarea>
                   </div>
                   <button 
-                    className="bg-[#ff7a00] text-black font-bold py-6 px-12 rounded-full flex items-center gap-4 hover:bg-white transition-all transform active:scale-95 shadow-xl shadow-black/20"
+                    className="bg-[#ff7a00] text-black font-bold py-4 px-15 flex items-center gap-4 hover:bg-white transition-all transform active:scale-95 shadow-xl shadow-black/20"
                     style={{ fontFamily: "var(--font-michroma)" }}
                   >
-                    ENVIAR TRANSMISIÓN <Send size={18} />
+                    ENVIAR <Send size={18} />
                   </button>
                 </form>
               </div>
@@ -103,16 +103,18 @@ export default function ContactoPage() {
                   </div>
                 </div>
 
-                {/* BOTÓN WHATSAPP (Como un módulo interno) */}
-                <div className="mt-4 p-8  border border-white/10 rounded-3xl group/wa cursor-pointer hover:bg-[#ff7a00] transition-all duration-500">
-                  <div className="flex items-center gap-5  transition-colors">
-                    <MessageSquare size={40} strokeWidth={2.5} />
-                    <div>
-                      <p className="text-xs font-bold uppercase" style={{ fontFamily: "var(--font-michroma)" }}>WhatsApp Live</p>
-                      <p className="text-lg font-bold leading-tight" style={{ fontFamily: "var(--font-rajdhani)" }}>Soporte técnico inmediato</p>
-                    </div>
-                  </div>
-                </div>
+                <button
+                  onClick={() =>
+                    window.open(
+                      `https://wa.me/51970478503?text=${encodeURIComponent("Hola, me gustaría contactarlos para más información.")}`,
+                      "_blank"
+                    )
+                  }
+                  className="bg-[#e85d04] hover:bg-[#ff6d0a] text-white py-2 px-10 rounded-sm font-bold w-fit uppercase transition-all shadow-[0_0_15px_rgba(232,93,4,0.3)] active:scale-95"
+                  style={{ fontFamily: "var(--font-rajdhani)" }}
+                >
+                  Contactar Ahora
+                </button>
 
               </div>
 

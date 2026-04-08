@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import TestimonialsSection from '@/components/sections/nosotros/TestimonialsSection';
 
 // Registrar el plugin de GSAP
 if (typeof window !== "undefined") {
@@ -236,39 +237,7 @@ export default function NosotrosPage() {
           </div>
         </div>
       </section>
-
-      <section className="py-32 px-6 relative text-center">
-        <h2 
-          className="text-[#ff7a00] text-sm tracking-[4px] mb-5 uppercase"
-          style={{ fontFamily: "var(--font-michroma)" }}
-        >
-          // Clientes Satisfechos
-        </h2>
-        <p 
-          className="text-4xl md:text-7xl text-white italic mb-20"
-          style={{ fontFamily: "var(--font-rajdhani)" }}
-        >
-          Confianza en cada paso.
-        </p>
-
-        <div className="testimonial-box max-w-5xl mx-auto bg-white/5 border border-white/10 p-12 rounded-3xl backdrop-blur-sm">
-          <p 
-            className="text-2xl md:text-4xl text-white mb-12 italic leading-relaxed"
-            style={{ fontFamily: "var(--font-rajdhani)" }}
-          >
-            Trabajar con Blujam Group nos dio la tranquilidad que necesitábamos. Su experiencia en ciberseguridad permitió fortalecer nuestros sistemas.
-          </p>
-          <div className="flex items-center justify-center gap-5 border-t border-white/10 pt-10">
-            <div className="w-16 h-16 bg-[#ff7a00] rounded-full flex items-center justify-center font-bold text-black text-2xl" style={{ fontFamily: "var(--font-michroma)" }}>
-              EC
-            </div>
-            <div className="text-left">
-              <p className="font-bold text-[#ff7a00] text-xl uppercase" style={{ fontFamily: "var(--font-michroma)" }}>EVT CORP</p>
-              <p className="text-white uppercase tracking-widest text-sm" style={{ fontFamily: "var(--font-rajdhani)" }}>Gerencia General</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection/>
     </main>
   );
 }

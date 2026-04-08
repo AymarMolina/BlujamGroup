@@ -181,6 +181,12 @@ const CardContent = ({ card }: { card: typeof cards[0] }) => (
       </p>
       <div className="mt-8 md:mt-auto">
         <button
+          onClick={() =>
+            window.open(
+              `https://wa.me/51970478503?text=${encodeURIComponent("Hola, me gustaría contactarlos para más información.")}`,
+              "_blank"
+            )
+          }
           className="bg-[#e85d04] hover:bg-[#ff6d0a] text-white py-2 px-10 rounded-sm font-bold w-fit uppercase transition-all shadow-[0_0_15px_rgba(232,93,4,0.3)] active:scale-95"
           style={{ fontFamily: "var(--font-rajdhani)" }}
         >
