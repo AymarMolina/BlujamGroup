@@ -93,6 +93,9 @@ export default function Navbar() {
       title: "SOPORTE & GESTIÓN",
       links: [
         { name: "Outsourcing TI", href: "/servicios/infraestructura-y-soporte" },
+        { name: "Administracion", href: "/servicios/infraestructura-y-soporte" },
+        { name: "Cableado Estructurado", href: "/servicios/infraestructura-y-soporte" },
+        { name: "Energia y continuidad", href: "/servicios/infraestructura-y-soporte" },
         { name: "Mantenimiento", href: "/servicios/infraestructura-y-soporte" },
       ]
     }

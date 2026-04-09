@@ -200,7 +200,7 @@ export default function NuestrosServicios() {
                   </svg>
                  
                   <img 
-                    src="/icons/blujamlogoChico.png" 
+                    src="/icons/logos/blujamlogoChico.png" 
                     alt="loading" 
                     className="w-8 h-8 object-contain opacity-50 animate-pulse" 
                   />

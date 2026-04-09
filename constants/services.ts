@@ -3,7 +3,7 @@ export const SERVICE_CATEGORIES = [
     id: "seguridad",
     title: "SEGURIDAD DE LA INFORMACIÓN Y GOBIERNO DE TI",
     slug: "seguridad-de-la-informacion",
-    image: "/icons/servicios/hero-1.webp",
+    image: "/icons/servicios/segu/ciberseguridad-seguridad-informacion-empresas.webp",
     services: [
       {
         id: "sgsi",
@@ -18,7 +18,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Confianza", desc: "Mejore su reputación en el mercado." },
           { title: "Reducción de Riesgos", desc: "Identifique amenazas antes de que ocurran." }
         ],
-        images: ["/icons/servicios/sgsi-1.webp"]
+        images: ["/icons/servicios/segu/implementacion-sgsi-iso-27001-seguridad-informacion.webp"]
       },
       {
         id: "gobierno",
@@ -33,7 +33,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Alineación", desc: "TI y Negocio trabajando en una sola dirección." },
           { title: "Control", desc: "Visibilidad total de la gestión de sistemas." }
         ],
-        images: ["/icons/servicios/sgsi-1.webp"]
+        images: ["/icons/servicios/segu/gobierno-ti-gestion-sistemas-informacion.webp"]
       },
       {
         id: "auditoria",
@@ -48,7 +48,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Transparencia", desc: "Claridad sobre el estado real de sus sistemas." },
           { title: "Seguridad Operativa", desc: "Validación de la efectividad de sus defensas." }
         ],
-        images: ["/icons/servicios/sgsi-1.webp"]
+        images: ["/icons/servicios/segu/auditoria-sistemas-informacion-ciberseguridad.webp"]
       },
       {
         id: "vulnerabilidades",
@@ -63,7 +63,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Resiliencia", desc: "Capacidad de resistir ataques externos." },
           { title: "Ahorro", desc: "Evite los altos costos de una recuperación post-ataque." }
         ],
-        images: ["/icons/servicios/sgsi-1.webp"]
+        images: ["/icons/servicios/segu/gestion-vulnerabilidades-aplicaciones-web.webp"]
       },
       {
         id: "cumplimiento",
@@ -78,7 +78,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Legalidad", desc: "Operación dentro del marco jurídico vigente." },
           { title: "Ventaja Comercial", desc: "Diferenciación mediante el cumplimiento de normas." }
         ],
-        images: ["/icons/servicios/sgsi-1.webp"]
+        images: ["/icons/servicios/segu/cumplimiento-normativo-seguridad-informacion-iso-27001.webp"]
       },
       {
         id: "capacitacion",
@@ -93,7 +93,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Prevención", desc: "Empleados que saben identificar amenazas." },
           { title: "Cultura Digital", desc: "Modernización del pensamiento operativo." }
         ],
-        images: ["/icons/servicios/sgsi-1.webp"]
+        images: ["/icons/servicios/segu/capacitacion-seguridad-informacion-empresas.webp"]
       }
     ]
   },
@@ -101,7 +101,7 @@ export const SERVICE_CATEGORIES = [
     id: "infraestructura",
     title: "INFRAESTRUCTURA Y SOPORTE DE TI",
     slug: "infraestructura-y-soporte",
-    image: "/icons/servicios/hero-1.webp",
+    image: "/icons/servicios/infra/infraestructura-ti-soporte-tecnico-empresas.webp",
     services: [
       {
         id: "outsourcing",
@@ -116,7 +116,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Disponibilidad", desc: "Atención inmediata ante cualquier incidencia." },
           { title: "Ahorro", desc: "Optimización de recursos de TI." }
         ],
-        images: ["/icons/servicios/soporte-1.png"]
+        images: ["/icons/servicios/infra/outsourcing-soporte-ti-empresas.webp"]
       },
       {
         id: "administracion",
@@ -131,7 +131,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Rendimiento", desc: "Sistemas que responden a la velocidad de su empresa." },
           { title: "Escalabilidad", desc: "Listo para crecer cuando el negocio lo requiera." }
         ],
-        images: ["/icons/servicios/soporte-1.png"]
+        images: ["/icons/servicios/infra/administracion-infraestructura-ti-redes-servidores.webp"]
       },
       {
         id: "cableado",
@@ -146,7 +146,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Durabilidad", desc: "Instalaciones diseñadas para durar años." },
           { title: "Certificación", desc: "Garantía de cumplimiento con normas internacionales." }
         ],
-        images: ["/icons/servicios/soporte-1.png"]
+        images: ["/icons/servicios/infra/cableado-estructurado-redes-empresariales.webp"]
       },
       {
         id: "energia",
@@ -161,7 +161,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Seguridad", desc: "Evite daños costosos en sus equipos." },
           { title: "Continuidad", desc: "Siga trabajando incluso sin suministro eléctrico." }
         ],
-        images: ["/icons/servicios/soporte-1.png"]
+        images: ["/icons/servicios/infra/ups-respaldo-energia-continuidad-operativa.webp"]
       },
       {
         id: "mantenimiento",
@@ -176,7 +176,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Ahorro", desc: "Menor inversión en reemplazo de equipos." },
           { title: "Estabilidad", desc: "Menos interrupciones por hardware fallido." }
         ],
-        images: ["/icons/servicios/soporte-1.png"]
+        images: ["/icons/servicios/infra/mantenimiento-preventivo-correctivo-equipos-ti.webp"]
       }
     ]
   },
@@ -184,7 +184,7 @@ export const SERVICE_CATEGORIES = [
     id: "software",
     title: "DESARROLLO DE SOFTWARE Y SOLUCIONES DIGITALES",
     slug: "desarrollo-de-software",
-    image: "/icons/servicios/hero-1.webp",
+    image: "/icons/servicios/soft/desarrollo-software-soluciones-digitales-empresas.webp",
     services: [
       {
         id: "web-ecommerce",
@@ -199,7 +199,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Visibilidad", desc: "Llegue a clientes en cualquier parte del mundo." },
           { title: "Ventas 24/7", desc: "Su tienda abierta todo el día, todos los días." }
         ],
-        images: ["/icons/servicios/web-1.png"]
+        images: ["/icons/servicios/soft/desarrollo-web-ecommerce-tiendas-online.webp"]
       },
       {
         id: "mobile",
@@ -214,7 +214,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Fidelización", desc: "Presencia constante en el móvil del usuario." },
           { title: "Accesibilidad", desc: "Facilidad de uso en cualquier momento." }
         ],
-        images: ["/icons/servicios/web-1.png"]
+        images: ["/icons/servicios/soft/desarrollo-aplicaciones-moviles-android-ios.webp"]
       },
       {
         id: "medida",
@@ -229,7 +229,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Exclusividad", desc: "Funcionalidades creadas solo para sus necesidades." },
           { title: "Propiedad", desc: "Usted es dueño de su solución tecnológica." }
         ],
-        images: ["/icons/servicios/web-1.png"]
+        images: ["/icons/servicios/soft/software-empresarial-a-medida-desarrollo.webp"]
       }
     ]
   },
@@ -237,7 +237,7 @@ export const SERVICE_CATEGORIES = [
     id: "automatizacion",
     title: "AUTOMATIZACIÓN E INTELIGENCIA ARTIFICIAL",
     slug: "automatizacion-e-ia",
-    image: "/icons/servicios/hero-1.webp",
+    image: "/icons/servicios/automa/automatizacion-inteligencia-artificial-empresas.webp",
     services: [
       {
         id: "rpa",
@@ -252,7 +252,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Productividad", desc: "Haga más con los mismos recursos." },
           { title: "Precisión", desc: "Elimine el factor de error humano en datos." }
         ],
-        images: ["/icons/servicios/rpa-1.png"]
+        images: ["/icons/servicios/automa/automatizacion-procesos-rpa-empresas.webp"]
       },
       {
         id: "chatbots",
@@ -267,7 +267,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Omnicanalidad", desc: "Atienda por WhatsApp, Web y Facebook." },
           { title: "Satisfacción", desc: "Elimine las colas de espera para sus clientes." }
         ],
-        images: ["/icons/servicios/rpa-1.png"]
+        images: ["/icons/servicios/automa/chatbots-asistentes-virtuales-atencion-cliente.webp"]
       },
       {
         id: "ia-aplicada",
@@ -282,7 +282,7 @@ export const SERVICE_CATEGORIES = [
           { title: "Inteligencia", desc: "Decisiones basadas en datos, no en intuiciones." },
           { title: "Innovación", desc: "Posicione su empresa a la vanguardia tecnológica." }
         ],
-        images: ["/icons/servicios/rpa-1.png"]
+        images: ["/icons/servicios/automa/inteligencia-artificial-analisis-predictivo-negocio.webp"]
       }
     ]
   }

@@ -9,17 +9,17 @@ import { gsap } from 'gsap';
 const CATEGORIES = ["TODOS", "INFRAESTRUCTURA", "SOFTWARE", "SEGURIDAD", "AUTOMATIZACIÓN"];
 
 const PROJECTS = [
-  { id: 1, category: 'INFRAESTRUCTURA', service: 'Outsourcing y Soporte TI', img: '/icons/servicios/serv2.webp', url: '/servicios/infraestructura-y-soporte' },
-  { id: 2, category: 'INFRAESTRUCTURA', service: 'Infraestructura TI', img: '/icons/servicios/serv2.webp', url: '/servicios/infraestructura-y-soporte' },
-  { id: 3, category: 'INFRAESTRUCTURA', service: 'Cableado Estructurado', img: '/icons/servicios/serv3.webp', url: '/servicios/infraestructura-y-soporte' },
-  { id: 4, category: 'INFRAESTRUCTURA', service: 'Energía y UPS', img: '/icons/servicios/serv4.webp', url: '/servicios/infraestructura-y-soporte' },
-  { id: 5, category: 'SOFTWARE', service: 'Web & E-commerce', img: '/icons/servicios/serv2.webp', url: '/servicios/desarrollo-de-software' },
-  { id: 6, category: 'SOFTWARE', service: 'Apps Móviles', img: '/icons/servicios/serv2.webp', url: '/servicios/desarrollo-de-software' },
-  { id: 7, category: 'SOFTWARE', service: 'Sistemas a Medida', img: '/icons/servicios/serv3.webp', url: '/servicios/desarrollo-de-software' },
-  { id: 8, category: 'SEGURIDAD', service: 'ISO 27001 & Ciberseguridad', img: '/icons/servicios/hero-1.webp', url: '/servicios/seguridad-de-la-informacion' },
-  { id: 9, category: 'SEGURIDAD', service: 'Gobierno de TI', img: '/icons/servicios/serv4.webp', url: '/servicios/seguridad-de-la-informacion' },
-  { id: 10, category: 'AUTOMATIZACIÓN', service: 'Inteligencia Artificial', img: '/icons/servicios/serv2.webp', url: '/servicios/automatizacion-e-ia' },
-  { id: 11, category: 'AUTOMATIZACIÓN', service: 'RPA & Bots', img: '/icons/servicios/serv3.webp', url: '/servicios/automatizacion-e-ia' },
+  { id: 1, category: 'INFRAESTRUCTURA', service: 'Outsourcing y Soporte TI', img: '/icons/servicios/infra/infraestructura-ti-soporte-tecnico-empresas.webp', url: '/servicios/infraestructura-y-soporte' },
+  { id: 2, category: 'INFRAESTRUCTURA', service: 'Infraestructura TI', img: '/icons/servicios/infra/infraestructura-ti-soporte-tecnico-empresas.webp', url: '/servicios/infraestructura-y-soporte' },
+  { id: 3, category: 'INFRAESTRUCTURA', service: 'Cableado Estructurado', img: '/icons/servicios/infra/infraestructura-ti-soporte-tecnico-empresas.webp', url: '/servicios/infraestructura-y-soporte' },
+  { id: 4, category: 'INFRAESTRUCTURA', service: 'Energía y UPS', img: '/icons/servicios/infra/infraestructura-ti-soporte-tecnico-empresas.webp', url: '/servicios/infraestructura-y-soporte' },
+  { id: 5, category: 'SOFTWARE', service: 'Web & E-commerce', img: '/icons/servicios/soft/desarrollo-software-soluciones-digitales-empresas.webp', url: '/servicios/desarrollo-de-software' },
+  { id: 6, category: 'SOFTWARE', service: 'Apps Móviles', img: '/icons/servicios/soft/desarrollo-software-soluciones-digitales-empresas.webp', url: '/servicios/desarrollo-de-software' },
+  { id: 7, category: 'SOFTWARE', service: 'Sistemas a Medida', img: '/icons/servicios/soft/desarrollo-software-soluciones-digitales-empresas.webp', url: '/servicios/desarrollo-de-software' },
+  { id: 8, category: 'SEGURIDAD', service: 'ISO 27001 & Ciberseguridad', img: '/icons/servicios/segu/ciberseguridad-seguridad-informacion-empresas.webp', url: '/servicios/seguridad-de-la-informacion' },
+  { id: 9, category: 'SEGURIDAD', service: 'Gobierno de TI', img: '/icons/servicios/segu/ciberseguridad-seguridad-informacion-empresas.webp', url: '/servicios/seguridad-de-la-informacion' },
+  { id: 10, category: 'AUTOMATIZACIÓN', service: 'Inteligencia Artificial', img: '/icons/servicios/automa/automatizacion-inteligencia-artificial-empresas.webp', url: '/servicios/automatizacion-e-ia' },
+  { id: 11, category: 'AUTOMATIZACIÓN', service: 'RPA & Bots', img: '/icons/servicios/automa/automatizacion-inteligencia-artificial-empresas.webp', url: '/servicios/automatizacion-e-ia' },
 ];
 
 const getCategoryIcon = (category: string) => {
@@ -108,7 +108,7 @@ export default function GaleriaProyectos() {
           <Link 
             href={project.url} 
             key={project.id}
-            className="project-card block relative group overflow-hidden rounded-[30px] border border-white/5 break-inside-avoid shadow-2xl bg-white/5"
+            className="project-card block relative group overflow-hidden rounded-[30px] border border-white/5 break-inside-avoid  bg-white/5"
           >
             <Image 
               src={project.img}
@@ -156,7 +156,7 @@ export default function GaleriaProyectos() {
 
       <div className="mt-20 text-center">
         <p className="text-gray-500 uppercase tracking-[5px] text-[10px] mb-8" style={{ fontFamily: "var(--font-michroma)" }}>
-          Visualizando {filteredProjects.length} soluciones tecnológicas
+          ALGUNOS DE NUESTOS PROYECTOS
         </p>
         <div className="h-[1px] w-20 bg-[#ff7a00] mx-auto"></div>
       </div>
