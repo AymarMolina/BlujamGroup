@@ -1,3 +1,4 @@
+
 export const SERVICE_CATEGORIES = [
   {
     id: "seguridad",

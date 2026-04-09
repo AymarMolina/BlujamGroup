@@ -3,8 +3,8 @@
 import React, { useState, useEffect, useRef, use } from "react";
 import gsap from "gsap";
 import { SERVICE_CATEGORIES } from "@/constants/services";
+import { useSearchParams } from "next/navigation";
 
-// Tipos para las líneas
 interface StairLine {
   size: number;
   top: number;
@@ -19,10 +19,18 @@ export default function DetalleServicio({ params }: { params: Promise<{ slug: st
   const categoria = SERVICE_CATEGORIES.find((c) => c.slug === slug);
   const [selectedIdx, setSelectedIdx] = useState(0);
   const contentRef = useRef(null);
-  const [stairLines, setStairLines] = useState<StairLine[]>([]);  // ← empieza vacío
-
+  const [stairLines, setStairLines] = useState<StairLine[]>([]);
   const current = categoria?.services[selectedIdx];
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const servicioId = searchParams.get("servicio");
+    if (servicioId && categoria) {
+      const idx = categoria.services.findIndex(s => s.id === servicioId);
+      if (idx !== -1) setSelectedIdx(idx);
+    }
+  }, [searchParams, categoria]);
   // Genera las líneas SOLO en el cliente
   useEffect(() => {
     const canvas = canvasRef.current;

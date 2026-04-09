@@ -95,6 +95,12 @@ export default function Hero() {
               Arquitectura digital de élite para empresas con visión de futuro.
             </h1>
             <button 
+                onClick={() =>
+                  window.open(
+                    `https://wa.me/51970478503?text=${encodeURIComponent("Hola, me gustaría contactarlos para más información.")}`,
+                    "_blank"
+                  )
+                }
               ref={buttonRef}
               className="bg-[#F07C20] text-white border-none rounded-[6px] px-15 py-3 text-lg font-medium cursor-pointer hover:bg-[#d96d18] transition-all shadow-[0_0_20px_rgba(240,124,32,0.3)]"
               style={{ fontFamily: "var(--font-michroma)" }}

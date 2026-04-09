@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,6 +53,31 @@ export default function NuestrosServicios() {
   const service = services[current];
   const progress = ((current + 1) / services.length) * 100;
 
+  useEffect(() => {
+    let interval: ReturnType<typeof setInterval>;
+
+    const trigger = ScrollTrigger.create({
+      trigger: container.current,
+      start: "top 75%",
+      onEnter: () => {
+        interval = setInterval(() => {
+          setCurrent((p) => (p + 1) % services.length);
+        }, 3000);
+      },
+      onLeave: () => clearInterval(interval),
+      onEnterBack: () => {
+        interval = setInterval(() => {
+          setCurrent((p) => (p + 1) % services.length);
+        }, 4000);
+      },
+      onLeaveBack: () => clearInterval(interval),
+    });
+
+    return () => {
+      clearInterval(interval);
+      trigger.kill();
+    };
+  }, []);
   useGSAP(() => {
     gsap.killTweensOf(".corner-path");
     gsap.set(".corner-path", { strokeDasharray: 300, strokeDashoffset: 300 });
@@ -144,12 +170,13 @@ export default function NuestrosServicios() {
                 
               </div>
 
-              <button 
-                className="bg-[#F07C20] hover:bg-[#cf5204] text-white text-lg  px-15 py-3 w-fit transition-all duration-300 transform hover:scale-105 active:scale-95" 
+              <Link 
+                href="/servicios"
+                className="bg-[#F07C20] hover:bg-[#cf5204] text-white text-lg px-15 py-3 w-fit transition-all duration-300 transform hover:scale-105 active:scale-95 inline-block"
                 style={{ fontFamily: "Michroma, sans-serif", borderRadius: "5px" }}
               >
                 Ver servicios
-              </button>
+              </Link>
             </div>
           </div>
 

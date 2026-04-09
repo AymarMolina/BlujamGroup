@@ -9,25 +9,8 @@ const CallToAction = () => {
   const scannerRef = useRef(null);
 
   useEffect(() => {
-    // Definimos el contexto de GSAP para animaciones seguras en React
     const ctx = gsap.context(() => {
-      
-      // 1. Animación del Escáner (Haz de Luz)
-      // Hace que un haz de luz sutil recorra la trama
-      gsap.fromTo(
-        scannerRef.current,
-        { x: "-100%" }, // Empieza fuera de la izquierda
-        {
-          x: "100%", // Termina fuera de la derecha
-          duration: 3.5, // Tiempo de recorrido
-          ease: "power2.inOut", // Curva de aceleración
-          repeat: -1, // Repetición infinita
-          yoyo: true, // Vuelve en la dirección opuesta
-        }
-      );
 
-      // 2. Animación de Opacidad Sutil de la Trama
-      // Hace que la cuadrícula "respire" suavemente
       gsap.fromTo(
         gridRef.current,
         { opacity: 0.1 },

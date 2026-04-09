@@ -64,42 +64,43 @@ export default function Navbar() {
     { name: "CONTACTO", href: "/contacto" },
   ];
   const menuServicios = [
-    {
-      title: "SEGURIDAD & GOBIERNO",
-      links: [
-        { name: "ISO 27001", href: "/servicios/seguridad-de-la-informacion" },
-        { name: "Gobierno de TI", href: "/servicios/seguridad-de-la-informacion" },
-        { name: "Auditoría de Sistemas", href: "/servicios/seguridad-de-la-informacion" },
-      ]
-    },
-    {
-      title: "SOFTWARE & DIGITAL",
-      links: [
-        { name: "Desarrollo Web", href: "/servicios/desarrollo-de-software" },
-        { name: "Sistemas a Medida", href: "/servicios/desarrollo-de-software" },
-      ]
-    },
-    {
-      title: "IA & AUTOMATIZACIÓN",
-      links: [
-        { name: "Procesos RPA", href: "/servicios/automatizacion-e-ia" },
-        { name: "Chatbots", href: "/servicios/automatizacion-e-ia" },
-      ]
-    }
-  ];
+  {
+    title: "SEGURIDAD & GOBIERNO",
+    links: [
+      { name: "ISO 27001", href: "/servicios/seguridad-de-la-informacion?servicio=sgsi" },
+      { name: "Gobierno de TI", href: "/servicios/seguridad-de-la-informacion?servicio=gobierno" },
+      { name: "Auditoría de Sistemas", href: "/servicios/seguridad-de-la-informacion?servicio=auditoria" },
+    ]
+  },
+  {
+    title: "SOFTWARE & DIGITAL",
+    links: [
+      { name: "Desarrollo Web", href: "/servicios/desarrollo-de-software?servicio=web-ecommerce" },
+      { name: "Aplicaciones Moviles", href: "/servicios/desarrollo-de-software?servicio=mobile" },
+      { name: "Sistemas a Medida", href: "/servicios/desarrollo-de-software?servicio=medida" },
+    ]
+  },
+  {
+    title: "IA & AUTOMATIZACIÓN",
+    links: [
+      { name: "Procesos RPA", href: "/servicios/automatizacion-e-ia?servicio=rpa" },
+      { name: "Chatbots", href: "/servicios/automatizacion-e-ia?servicio=chatbots" },
+    ]
+  }
+];
 
-  const menuInfra = [
-    {
-      title: "SOPORTE & GESTIÓN",
-      links: [
-        { name: "Outsourcing TI", href: "/servicios/infraestructura-y-soporte" },
-        { name: "Administracion", href: "/servicios/infraestructura-y-soporte" },
-        { name: "Cableado Estructurado", href: "/servicios/infraestructura-y-soporte" },
-        { name: "Energia y continuidad", href: "/servicios/infraestructura-y-soporte" },
-        { name: "Mantenimiento", href: "/servicios/infraestructura-y-soporte" },
-      ]
-    }
-  ];
+const menuInfra = [
+  {
+    title: "SOPORTE & GESTIÓN",
+    links: [
+      { name: "Outsourcing TI", href: "/servicios/infraestructura-y-soporte?servicio=outsourcing" },
+      { name: "Administracion", href: "/servicios/infraestructura-y-soporte?servicio=administracion" },
+      { name: "Cableado Estructurado", href: "/servicios/infraestructura-y-soporte?servicio=cableado" },
+      { name: "Energia y continuidad", href: "/servicios/infraestructura-y-soporte?servicio=energia" },
+      { name: "Mantenimiento", href: "/servicios/infraestructura-y-soporte?servicio=mantenimiento" },
+    ]
+  }
+];
 
 
   return (
@@ -134,13 +135,11 @@ export default function Navbar() {
 
           <div className="flex-none px-12 relative z-10">
             <Link href="/">
-              <Image
+              <img
                 src="/icons/logos/blujamcom.png"
                 alt="Blujam Group Logo"
-                width={isScrolled ? 180 : 220} 
-                height={70}
+                style={{ width: isScrolled ? "180px" : "220px", height: "auto" }}
                 className="cursor-pointer transition-all duration-500"
-                priority
               />
             </Link>
           </div>

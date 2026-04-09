@@ -1,23 +1,61 @@
-
 "use client";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { SERVICE_CATEGORIES } from "@/constants/services";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function ServiciosPage() {
   const containerRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+
+      // Header
+      gsap.from(".header-tag", {
+        y: -20,
+        opacity: 0,
+        duration: 0.2,
+        ease: "expo.out",
+      });
+      gsap.from(".header-title", {
+        x: -40,
+        opacity: 0,
+        duration: 1.2,
+        delay: 0.2,
+        ease: "expo.out",
+      });
+
+      // Cards con ScrollTrigger
       gsap.from(".service-card", {
-        y: 60,
+        y: 80,
         opacity: 0,
         stagger: 0.15,
-        duration: 1.2,
+        duration: 0.3,
         ease: "power4.out",
-        clearProps: "all"
+        clearProps: "all",
+        scrollTrigger: {
+          trigger: ".cards-grid",
+          start: "top 85%",
+        }
       });
+
+      // Footer
+      gsap.from(".footer-line", {
+        opacity: 0,
+        y: 20,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".footer-line",
+          start: "top 95%",
+        }
+      });
+
     }, containerRef);
     return () => ctx.revert();
   }, []);
@@ -29,19 +67,19 @@ export default function ServiciosPage() {
         <div className="mb-20">
           <p 
             style={{ fontFamily: "var(--font-rajdhani)" }} 
-            className="text-[#FE7F0E] font-bold tracking-[8px] mb-4 text-sm uppercase"
+            className="header-tag text-[#FE7F0E] font-bold tracking-[8px] mb-4 text-sm uppercase"
           >
             PORTAFOLIO DE SOLUCIONES
           </p>
           <h1 
             style={{ fontFamily: "var(--font-michroma)" }} 
-            className="text-white text-3xl md:text-5xl border-l-4 border-[#FE7F0E] pl-8 uppercase leading-tight"
+            className="header-title text-white text-3xl md:text-5xl border-l-4 border-[#FE7F0E] pl-8 uppercase leading-tight"
           >
             NUESTROS <span className="text-[#FE7F0E]">SERVICIOS</span>
           </h1>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="cards-grid grid grid-cols-1 lg:grid-cols-2 gap-10">
           {SERVICE_CATEGORIES.map((cat) => (
             <Link 
               key={cat.id} 
@@ -49,12 +87,11 @@ export default function ServiciosPage() {
               className="service-card group relative h-[450px] overflow-hidden border border-white/5 bg-white/[0.02] p-12 flex flex-col justify-end transition-all duration-500 hover:border-[#FE7F0E]/40"
             >
               <div className="absolute inset-0 z-0">
-                 <img 
-                   src={cat.image} 
-                   alt={cat.title} 
-                   className="w-full h-full object-cover opacity-30 grayscale group-hover:grayscale-0 group-hover:scale-110 group-hover:opacity-50 transition-all duration-1000 ease-out" 
-                 />
-                 <div className="absolute inset-0 bg-gradient-to-t from-[#000A15] via-[#000A15]/80 to-transparent" />
+                <img 
+                  src={cat.image} 
+                  alt={cat.title} 
+                  className="w-full h-full object-cover opacity-40 group-hover:grayscale-0 group-hover:scale-110 group-hover:opacity-70 transition-all duration-1000 ease-out" 
+                />
               </div>
 
               <div className="relative z-10">
@@ -64,7 +101,6 @@ export default function ServiciosPage() {
                 >
                   {cat.title}
                 </h2>
-                
 
                 <div 
                   style={{ fontFamily: "var(--font-michroma)" }} 
@@ -78,17 +114,6 @@ export default function ServiciosPage() {
               <div className="absolute top-8 right-8 w-12 h-12 border-t border-r border-white/10 group-hover:border-[#FE7F0E]/50 transition-all duration-500" />
             </Link>
           ))}
-        </div>
-
-        <div className="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-            <p style={{ fontFamily: "var(--font-rajdhani)" }} className="text-white/30 text-sm tracking-widest uppercase font-bold">
-              © 2026 Blujam Group • Innovación & Seguridad
-            </p>
-            <div className="flex gap-10">
-                <span className="text-white/10 font-michroma text-[10px]">CYBERSECURITY</span>
-                <span className="text-white/10 font-michroma text-[10px]">INFRASTRUCTURE</span>
-                <span className="text-white/10 font-michroma text-[10px]">AI SOLUTIONS</span>
-            </div>
         </div>
       </div>
     </main>

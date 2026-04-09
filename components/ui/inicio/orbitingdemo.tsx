@@ -4,7 +4,7 @@ export function OrbitingCirclesDemo() {
   return (
     <div className="relative flex  h-[700px] w-[700px] flex-col items-center justify-center overflow-hidden">
         <div className="relative z-10 flex h-20 w-64 animate-[floatY_8s_ease-in-out_infinite] items-center justify-center">
-            <img src="/icons/logos/blujamlogoChico.png" alt="Websy" className="h-full w-full object-contain" draggable="false"/>
+            <img src="/icons/logos/blujamlogoChico.png"  className="h-full w-full object-contain" draggable="false"/>
         </div>
       <OrbitingCircles iconSize={100}>
         <img src="/icons/logos/servicio1.png" className="object-contain"style={{width: "70px",height: "70px"}} />
