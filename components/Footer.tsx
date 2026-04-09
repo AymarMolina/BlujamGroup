@@ -1,43 +1,43 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 
 const footerData = [
   {
     title: "Seguridad de la Información y Gobierno de TI",
     links: [
-      "Implementación de SGSI (ISO 27001)",
-      "Gobierno de TI para Sistemas de Información",
-      "Auditoría y Evaluación de Sistemas",
-      "Gestión de Vulnerabilidades",
-      "Cumplimiento Normativo",
-      "Capacitación en Seguridad",
-      "Acompañamiento para Certificaciones",
+      { name: "Implementación de SGSI (ISO 27001)", href: "/servicios/seguridad-de-la-informacion?servicio=sgsi" },
+      { name: "Gobierno de TI para Sistemas de Información", href: "/servicios/seguridad-de-la-informacion?servicio=gobierno" },
+      { name: "Auditoría y Evaluación de Sistemas", href: "/servicios/seguridad-de-la-informacion?servicio=auditoria" },
+      { name: "Gestión de Vulnerabilidades", href: "/servicios/seguridad-de-la-informacion?servicio=vulnerabilidades" },
+      { name: "Cumplimiento Normativo", href: "/servicios/seguridad-de-la-informacion?servicio=cumplimiento" },
+      { name: "Capacitación en Seguridad", href: "/servicios/seguridad-de-la-informacion?servicio=capacitacion" },
     ],
   },
   {
     title: "Infraestructura y Soporte de TI",
     links: [
-      "Outsourcing y Soporte TI",
-      "Administración de Infraestructura",
-      "Cableado Estructurado",
-      "Energía y Continuidad (UPS)",
-      "Mantenimiento Preventivo y Correctivo",
+      { name: "Outsourcing y Soporte TI", href: "/servicios/infraestructura-y-soporte?servicio=outsourcing" },
+      { name: "Administración de Infraestructura", href: "/servicios/infraestructura-y-soporte?servicio=administracion" },
+      { name: "Cableado Estructurado", href: "/servicios/infraestructura-y-soporte?servicio=cableado" },
+      { name: "Energía y Continuidad (UPS)", href: "/servicios/infraestructura-y-soporte?servicio=energia" },
+      { name: "Mantenimiento Preventivo y Correctivo", href: "/servicios/infraestructura-y-soporte?servicio=mantenimiento" },
     ],
   },
   {
     title: "Desarrollo de Software y Soluciones Digitales",
     links: [
-      "Desarrollo Web y E-commerce",
-      "Desarrollo de Aplicaciones Móviles",
-      "Sistemas Empresariales a Medida",
+      { name: "Desarrollo Web y E-commerce", href: "/servicios/desarrollo-de-software?servicio=web-ecommerce" },
+      { name: "Desarrollo de Aplicaciones Móviles", href: "/servicios/desarrollo-de-software?servicio=mobile" },
+      { name: "Sistemas Empresariales a Medida", href: "/servicios/desarrollo-de-software?servicio=medida" },
     ],
   },
   {
     title: "Automatización e Inteligencia Artificial",
     links: [
-      "Automatización de Procesos (RPA)",
-      "Chatbots y Asistentes Virtuales",
-      "Soluciones de IA Aplicadas",
+      { name: "Automatización de Procesos (RPA)", href: "/servicios/automatizacion-e-ia?servicio=rpa" },
+      { name: "Chatbots y Asistentes Virtuales", href: "/servicios/automatizacion-e-ia?servicio=chatbots" },
+      { name: "Soluciones de IA Aplicadas", href: "/servicios/automatizacion-e-ia?servicio=ia-aplicada" },
     ],
   },
 ];
@@ -126,13 +126,13 @@ const Footer = () => {
               <ul className="flex flex-col gap-3">
                 {section.links.map((link, i) => (
                   <li key={i}>
-                    <a
-                      href="#"
+                    <Link
+                      href={link.href}
                       className="text-white/90 hover:text-orange-500 text-sm transition-colors duration-300 font-light block"
                       style={{ fontFamily: "var(--font-rajdhani)" }}
                     >
-                      {link}
-                    </a>
+                      {link.name}
+                    </Link>
                   </li>
                 ))}
               </ul>

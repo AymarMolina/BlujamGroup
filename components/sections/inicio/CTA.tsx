@@ -58,6 +58,12 @@ const CallToAction = () => {
         </h2>
 
         <button
+          onClick={() =>
+                  window.open(
+                    `https://wa.me/51970478503?text=${encodeURIComponent("Hola, me gustaría contactarlos para más información.")}`,
+                    "_blank"
+                  )
+                }
           className="bg-[#ff7a00] hover:bg-[#e66e00] text-white text-lg md:text-xl font-bold py-4 px-12 rounded-md transition-all duration-300 active:scale-95 uppercase shadow-xl hover:shadow-[#ff7a00]/30"
           style={{ fontFamily: 'var(--font-rajdhani), sans-serif' }}
         >
