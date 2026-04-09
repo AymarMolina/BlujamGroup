@@ -72,24 +72,24 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full h-[140vh] overflow-hidden bg-[#000A15] font-barlow">
+    <section ref={containerRef} className="relative w-full h-auto min-h-[120vh] md:h-[140vh] overflow-hidden bg-[#000A15] font-barlow">
       
       <div
         className="absolute inset-0 z-0"
         style={{ background: "radial-gradient(ellipse at center, #1A518F 0%, #000A15 70%)" }}
       />
 
-      <div className="absolute bottom-[-75vh] left-1/2 -translate-x-1/2 w-[150vw] h-[150vh] pointer-events-none z-[1]">
+      <div className="absolute bottom-[-30vh] md:bottom-[-75vh] w-[200vw] md:w-[150vw] h-[80vh] md:h-[150vh] left-1/2 -translate-x-1/2  pointer-events-none z-[1]">
         <Globe />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1280px] 2xl:max-w-[1650px] mx-auto px-16 h-full flex flex-col justify-center gap-15">
+      <div className="relative z-10 w-full max-w-[1280px] 2xl:max-w-[1650px] mx-auto h-full flex px-6 md:px-16 flex-col justify-center gap-10 md:gap-15 pt-50 pb-16 md:pt-0 md:pb-0">
         
-        <div className="flex items-center justify-between gap-5">
-          <div className="flex-none max-w-[650px] 2xl:max-w-[850px]">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-5">
+          <div className="w-full md:flex-none md:max-w-[650px] 2xl:max-w-[850px] flex flex-col items-center md:items-start 2xl:max-w-[850px]">
             <h1
               ref={titleRef}
-              className="text-white font-normal leading-tight tracking-tight mb-7 text-5xl 2xl:text-6xl"
+              className="text-white font-normal leading-tight tracking-tight mb-7 text-3xl sm:text-4xl md:text-5xl 2xl:text-6xl text-center md:text-left"
               style={{ fontFamily: "var(--font-michroma)", perspective: "1000px" }}
             >
               Arquitectura digital de élite para empresas con visión de futuro.
@@ -109,7 +109,7 @@ export default function Hero() {
             </button>
           </div>
 
-          <div ref={orbitRef} className="flex-1 max-w-[680px] min-w-[320px]">
+          <div ref={orbitRef} className="w-full flex justify-center md:flex-1 md:max-w-[680px]">
             <OrbitingCirclesDemo/>
           </div>
         </div>
@@ -117,12 +117,12 @@ export default function Hero() {
         <div className="text-center max-w-6xl mx-auto">
           <p
             ref={subtitleRef}
-            className="m-0 text-white font-normal leading-relaxed text-5xl"
+            className="m-0 text-white font-normal leading-relaxed text-2xl sm:text-3xl md:text-5xl"
             style={{ fontFamily: "var(--font-michroma)" }}
           >
             Tecnología pensada para empresas que quieren{" "}
             <span
-              className="text-[#F07C20] font-bold tracking-widest text-7xl"
+              className="text-[#F07C20] font-bold tracking-widest text-4xl sm:text-5xl md:text-7xl"
               style={{ fontFamily: "Rajdhani, sans-serif" }}
             >
               CRECER

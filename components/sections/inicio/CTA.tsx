@@ -1,4 +1,4 @@
-"use client"; // Necesario para GSAP en Next.js App Router
+"use client"; 
 
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -25,7 +25,6 @@ const CallToAction = () => {
 
     }, sectionRef);
 
-    // Limpieza de animaciones al desmontar
     return () => ctx.revert();
   }, []);
 
@@ -41,7 +40,7 @@ const CallToAction = () => {
           backgroundImage:
             "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
           backgroundSize: "40px 40px",
-          maskImage: "radial-gradient(ellipse at center, black, transparent 80%)", // Suaviza bordes
+          maskImage: "radial-gradient(ellipse at center, black, transparent 80%)",
         }}
       />
 

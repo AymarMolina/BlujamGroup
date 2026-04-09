@@ -2,7 +2,7 @@ import { OrbitingCircles } from "@/components/ui/orbiting-circles"
 
 export function OrbitingCirclesDemo() {
   return (
-    <div className="relative flex  h-[700px] w-[700px] flex-col items-center justify-center overflow-hidden">
+    <div className="relative flex  h-[320px] w-[320px] sm:h-[500px] sm:w-[500px] md:h-[700px] md:w-[700px] flex-col items-center justify-center overflow-hidden">
         <div className="relative z-10 flex h-20 w-64 animate-[floatY_8s_ease-in-out_infinite] items-center justify-center">
             <img src="/icons/logos/blujamlogoChico.png"  className="h-full w-full object-contain" draggable="false"/>
         </div>

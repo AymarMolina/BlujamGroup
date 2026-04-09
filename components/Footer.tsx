@@ -79,7 +79,6 @@ const Footer = () => {
       <div className="max-w-[1600px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
 
-          {/* Brand column */}
           <div className="lg:col-span-1 flex flex-col gap-6">
             <img
               src="/icons/logos/blujamlogoChico.png"
@@ -94,7 +93,6 @@ const Footer = () => {
               digitales de su organización con estándares internacionales.
             </p>
 
-            {/* Social icons */}
             <div className="flex gap-3 flex-wrap">
               {socials.map(({ href, label, icon }) => (
                 <a
@@ -114,7 +112,6 @@ const Footer = () => {
 
           </div>
 
-          {/* Service columns */}
           {footerData.map((section, idx) => (
             <div key={idx} className="flex flex-col gap-6">
               <h4
@@ -140,7 +137,6 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Bottom bar */}
         <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p
             className="text-white/50 text-xs tracking-widest uppercase"

@@ -23,6 +23,7 @@ export default function DetalleServicio({ params }: { params: Promise<{ slug: st
   const current = categoria?.services[selectedIdx];
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const searchParams = useSearchParams();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     const servicioId = searchParams.get("servicio");
@@ -31,7 +32,7 @@ export default function DetalleServicio({ params }: { params: Promise<{ slug: st
       if (idx !== -1) setSelectedIdx(idx);
     }
   }, [searchParams, categoria]);
-  // Genera las líneas SOLO en el cliente
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -175,6 +176,13 @@ export default function DetalleServicio({ params }: { params: Promise<{ slug: st
     );
   }, [selectedIdx]);
 
+  // Cierra sidebar móvil al cambiar servicio
+  const handleServiceSelect = (index: number) => {
+    setSelectedIdx(index);
+    setSidebarOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   if (!categoria || !current) return null;
 
   return (
@@ -182,146 +190,262 @@ export default function DetalleServicio({ params }: { params: Promise<{ slug: st
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
       </div>
-      <section className="relative h-[70vh] pt-20 flex items-center px-6 md:px-10 overflow-hidden border-b border-white/10">
+
+      {/* Hero */}
+      <section className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] pt-16 sm:pt-20 flex items-center px-4 sm:px-6 md:px-10 overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 z-0">
-          <img src={categoria.image} className="w-full h-full object-cover " alt="" />
+          <img src={categoria.image} className="w-full h-full object-cover" alt="" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#000A15] via-[#000A15]/80 to-transparent" />
-          <div className="absolute inset-0 bg-black/40" /> 
+          <div className="absolute inset-0 bg-black/40" />
         </div>
-        
+
         <div className="max-w-[1400px] mx-auto w-full relative z-10">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-[1px] bg-[#FE7F0E]" />
-            <p style={{fontFamily: "var(--font-rajdhani)"}} className="text-[#FE7F0E] text-sm font-bold tracking-[8px] uppercase">
+          <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <div className="w-8 sm:w-12 h-[1px] bg-[#FE7F0E]" />
+            <p
+              style={{ fontFamily: "var(--font-rajdhani)" }}
+              className="text-[#FE7F0E] text-xs sm:text-sm font-bold tracking-[4px] sm:tracking-[8px] uppercase"
+            >
               {categoria.id.replace("-", " ")}
             </p>
           </div>
-          <h1 style={{fontFamily: "var(--font-michroma)"}} className="text-white text-4xl md:text-7xl max-w-5xl leading-[1.1] uppercase">
+          <h1
+            style={{ fontFamily: "var(--font-michroma)" }}
+            className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-7xl max-w-5xl leading-[1.1] uppercase"
+          >
             {categoria.title}
           </h1>
         </div>
       </section>
 
-      <section className="max-w-[1400px] mx-auto px-6 md:px-10 py-24 grid grid-cols-12 gap-10 lg:gap-20 items-start">
-        
+      {/* Botón flotante de especialidades en móvil */}
+      <div className="lg:hidden fixed bottom-6 right-4 z-50 flex flex-col items-end gap-3">
+        {sidebarOpen && (
+          <div className="bg-[#0D1520] border border-white/10 p-5 w-72 max-h-[60vh] overflow-y-auto shadow-2xl">
+            <h3
+              style={{ fontFamily: "var(--font-michroma)" }}
+              className="text-white/90 text-[10px] tracking-[5px] mb-5 uppercase"
+            >
+              Especialidades
+            </h3>
+            <div className="flex flex-col gap-2">
+              {categoria.services.map((service, index) => (
+                <button
+                  key={service.id}
+                  onClick={() => handleServiceSelect(index)}
+                  style={{ fontFamily: "var(--font-rajdhani)" }}
+                  className={`w-full text-left px-4 py-3 text-sm tracking-[2px] transition-all duration-300 border-l-2 ${
+                    selectedIdx === index
+                      ? "bg-[#FE7F0E] text-black border-white font-bold"
+                      : "bg-white/[0.03] text-white/90 border-transparent hover:bg-white/5"
+                  }`}
+                >
+                  {service.name.toUpperCase()}
+                </button>
+              ))}
+            </div>
+            <div className="mt-4">
+              <button
+                onClick={() =>
+                  window.open(
+                    `https://wa.me/51970478503?text=${encodeURIComponent("Hola, me gustaría contactarlos para más información.")}`,
+                    "_blank"
+                  )
+                }
+                style={{ fontFamily: "var(--font-michroma)" }}
+                className="w-full border border-[#FE7F0E] text-[#FE7F0E] py-4 text-[10px] tracking-[3px] font-bold uppercase hover:bg-[#FE7F0E] hover:text-black transition-all"
+              >
+                Solicitar Cotización
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Contenido principal */}
+      <section className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-24 grid grid-cols-12 gap-6 sm:gap-10 lg:gap-20 items-start">
+
+        {/* Columna principal */}
         <div className="col-span-12 lg:col-span-8" ref={contentRef}>
-          
-          <div className="mb-24">
-            <h2 style={{fontFamily: "var(--font-michroma)"}} className="text-[#FE7F0E] text-3xl mb-10 leading-tight uppercase max-w-2xl">
+
+          {/* Slogan + descripción */}
+          <div className="mb-14 sm:mb-20 md:mb-24">
+            <h2
+              style={{ fontFamily: "var(--font-michroma)" }}
+              className="text-[#FE7F0E] text-xl sm:text-2xl md:text-3xl mb-6 sm:mb-10 leading-tight uppercase max-w-2xl"
+            >
               {current.slogan}
             </h2>
-            <p style={{fontFamily: "var(--font-rajdhani)"}} className="text-white/90 text-2xl leading-relaxed font-light border-l-2 border-white/10 pl-8">
+            <p
+              style={{ fontFamily: "var(--font-rajdhani)" }}
+              className="text-white/90 text-lg sm:text-xl md:text-2xl leading-relaxed font-light border-l-2 border-white/10 pl-5 sm:pl-8"
+            >
               {current.fullDescription}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32">
-            <div className="space-y-8">
-              <h3 style={{fontFamily: "var(--font-michroma)"}} className="text-white text-lg uppercase tracking-[4px] flex items-center gap-3">
-                <span className="w-2 h-2 bg-[#FE7F0E]" /> Desafíos Críticos
+          {/* Desafíos + imagen */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 md:gap-16 mb-20 sm:mb-28 md:mb-32">
+            <div className="space-y-5 sm:space-y-8">
+              <h3
+                style={{ fontFamily: "var(--font-michroma)" }}
+                className="text-white text-sm sm:text-base lg:text-lg uppercase tracking-[3px] sm:tracking-[4px] flex items-center gap-3"
+              >
+                <span className="w-2 h-2 bg-[#FE7F0E] shrink-0" /> Desafíos Críticos
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {current.essential?.map((item, i) => (
-                  <div key={i} className="group p-6 bg-white/[0.02] border border-white/5 hover:border-[#FE7F0E]/30 transition-all">
-                    <p style={{fontFamily: "var(--font-rajdhani)"}} className="text-white/60 group-hover:text-white transition-colors uppercase font-bold text-sm tracking-widest">{item}</p>
+                  <div
+                    key={i}
+                    className="group p-4 sm:p-6 bg-white/[0.02] border border-white/5 hover:border-[#FE7F0E]/30 transition-all"
+                  >
+                    <p
+                      style={{ fontFamily: "var(--font-rajdhani)" }}
+                      className="text-white/60 group-hover:text-white transition-colors uppercase font-bold text-xs sm:text-sm tracking-widest"
+                    >
+                      {item}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="relative h-full min-h-[400px]">
-               <img src={current.images?.[0] || categoria.image} className="absolute inset-0 w-full h-full object-cover" alt="" />
-               <div className="absolute inset-0 bg-[#FE7F0E]/10 mix-blend-overlay" />
-               <div className="absolute inset-0 border border-white/10 m-4" />
+            <div className="relative h-[280px] sm:h-full sm:min-h-[360px] md:min-h-[400px]">
+              <img
+                src={current.images?.[0] || categoria.image}
+                className="absolute inset-0 w-full h-full object-cover"
+                alt=""
+              />
+              <div className="absolute inset-0 bg-[#FE7F0E]/10 mix-blend-overlay" />
+              <div className="absolute inset-0 border border-white/10 m-3 sm:m-4" />
             </div>
           </div>
 
-          <div className="mb-32">
-            <h3 style={{fontFamily: "var(--font-michroma)"}} className="text-white text-xl uppercase tracking-[4px] mb-12">
+          {/* Alcance del servicio */}
+          <div className="mb-20 sm:mb-28 md:mb-32">
+            <h3
+              style={{ fontFamily: "var(--font-michroma)" }}
+              className="text-white text-sm sm:text-base md:text-xl uppercase tracking-[3px] sm:tracking-[4px] mb-8 sm:mb-12"
+            >
               Alcance del Servicio
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 sm:gap-x-12 gap-y-6 sm:gap-y-8">
               {current.features?.map((f, i) => (
-                <div key={i} className="flex items-start gap-6 border-b border-white/5 pb-8">
-                  <span className="text-[#FE7F0E] font-michroma text-xl">0{i+1}</span>
-                  <p style={{fontFamily: "var(--font-rajdhani)"}} className="text-white text-xl uppercase leading-none mt-1">{f}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mb-32 bg-white/[0.03] p-10 md:p-16 border border-white/5">
-            <h3 style={{fontFamily: "var(--font-michroma)"}} className="text-[#FE7F0E] text-xs tracking-[5px] uppercase mb-10">Metodología de Ejecución</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              {["Diagnóstico", "Implementación", "Optimización"].map((step, i) => (
-                <div key={i} className="space-y-4">
-                  <div className="h-[1px] bg-white/20 w-full" />
-                  <h4 style={{fontFamily: "var(--font-michroma)"}} className="text-white text-[12px]">{step}</h4>
-                  <p style={{fontFamily: "var(--font-rajdhani)"}} className="text-white/90 text-sm italic">Procesos estandarizados bajo normativas internacionales.</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="space-y-16">
-            <div className="text-center md:text-right italic">
-               <p style={{fontFamily: "var(--font-michroma)"}} className="text-white/90 text-2xl leading-relaxed">
-                 "{current.quote}"
-               </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-               {current.benefits?.map((b, i) => (
-                 <div
-                    key={i}
-                    className="bg-[#FE7F0E] p-10 flex flex-col justify-between min-h-[200px]"
-                    style={{
-                      position: "relative",
-                      overflow: "hidden",
-                    }}
+                <div key={i} className="flex items-start gap-4 sm:gap-6 border-b border-white/5 pb-6 sm:pb-8">
+                  <span className="text-[#FE7F0E] font-michroma text-base sm:text-xl shrink-0">0{i + 1}</span>
+                  <p
+                    style={{ fontFamily: "var(--font-rajdhani)" }}
+                    className="text-white text-base sm:text-xl uppercase leading-none mt-1"
                   >
-                    {/* shimmer sweep */}
-                    <div
-                      className="absolute inset-0 pointer-events-none"
-                      style={{
-                        background: "linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)",
-                        backgroundSize: "200% 200%",
-                        animation: "cardShimmer 3s ease-in-out infinite",
-                      }}
-                    />
-                    {/* orbe decorativo */}
-                    <div
-                      className="absolute -bottom-5 -right-5 w-24 h-24 rounded-full pointer-events-none"
-                      style={{ background: "rgba(255,255,255,0.27)", animation: "stairMove 4s ease-in-out infinite alternate" }}
-                    />
-                    <h4 style={{fontFamily: "var(--font-michroma)"}} className="text-black text-xl uppercase leading-tight font-bold relative z-10">{b.title}</h4>
-                    <p style={{fontFamily: "var(--font-rajdhani)"}} className="text-black text-lg font-semibold italic relative z-10">{b.desc}</p>
-                  </div>
-               ))}
+                    {f}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Metodología */}
+          <div className="mb-20 sm:mb-28 md:mb-32 bg-white/[0.03] p-6 sm:p-10 md:p-16 border border-white/5">
+            <h3
+              style={{ fontFamily: "var(--font-michroma)" }}
+              className="text-[#FE7F0E] text-xs tracking-[4px] sm:tracking-[5px] uppercase mb-8 sm:mb-10"
+            >
+              Metodología de Ejecución
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10">
+              {["Diagnóstico", "Implementación", "Optimización"].map((step, i) => (
+                <div key={i} className="space-y-3 sm:space-y-4">
+                  <div className="h-[1px] bg-white/20 w-full" />
+                  <h4
+                    style={{ fontFamily: "var(--font-michroma)" }}
+                    className="text-white text-[11px] sm:text-[12px]"
+                  >
+                    {step}
+                  </h4>
+                  <p
+                    style={{ fontFamily: "var(--font-rajdhani)" }}
+                    className="text-white/90 text-sm italic"
+                  >
+                    Procesos estandarizados bajo normativas internacionales.
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Quote + Benefits */}
+          <div className="space-y-10 sm:space-y-16">
+            <div className="text-left sm:text-center md:text-right italic px-0 sm:px-4">
+              <p
+                style={{ fontFamily: "var(--font-michroma)" }}
+                className="text-white/90 text-lg sm:text-xl md:text-2xl leading-relaxed"
+              >
+                "{current.quote}"
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              {current.benefits?.map((b, i) => (
+                <div
+                  key={i}
+                  className="bg-[#FE7F0E] p-7 sm:p-10 flex flex-col justify-between min-h-[160px] sm:min-h-[200px]"
+                  style={{ position: "relative", overflow: "hidden" }}
+                >
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)",
+                      backgroundSize: "200% 200%",
+                      animation: "cardShimmer 3s ease-in-out infinite",
+                    }}
+                  />
+                  <div
+                    className="absolute -bottom-5 -right-5 w-20 sm:w-24 h-20 sm:h-24 rounded-full pointer-events-none"
+                    style={{
+                      background: "rgba(255,255,255,0.27)",
+                      animation: "stairMove 4s ease-in-out infinite alternate",
+                    }}
+                  />
+                  <h4
+                    style={{ fontFamily: "var(--font-michroma)" }}
+                    className="text-black text-base sm:text-xl uppercase leading-tight font-bold relative z-10"
+                  >
+                    {b.title}
+                  </h4>
+                  <p
+                    style={{ fontFamily: "var(--font-rajdhani)" }}
+                    className="text-black text-base sm:text-lg font-semibold italic relative z-10"
+                  >
+                    {b.desc}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
-        <div className="col-span-12 lg:col-span-4 relative h-full">
+        {/* Sidebar — solo visible en lg+ */}
+        <div className="hidden lg:block col-span-4 relative h-full">
           <div className="sticky top-32 space-y-8 pt-4">
-            <div className="bg-[#0D1520] border border-white/10 p-10  relative overflow-hidden">
+            <div className="bg-[#0D1520] border border-white/10 p-10 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#FE7F0E]/5 rounded-full blur-3xl -mr-16 -mt-16" />
-              
-              <h3 style={{fontFamily: "var(--font-michroma)"}} className="text-white/90 text-[10px] tracking-[5px] mb-10 uppercase relative z-10">
+
+              <h3
+                style={{ fontFamily: "var(--font-michroma)" }}
+                className="text-white/90 text-[10px] tracking-[5px] mb-10 uppercase relative z-10"
+              >
                 Especialidades
               </h3>
-              
+
               <div className="flex flex-col gap-3 relative z-10">
                 {categoria.services.map((service, index) => (
                   <button
                     key={service.id}
-                    onClick={() => {
-                      setSelectedIdx(index);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
+                    onClick={() => handleServiceSelect(index)}
                     style={{ fontFamily: "var(--font-rajdhani)" }}
                     className={`w-full text-left px-6 py-5 tracking-[2px] transition-all duration-500 border-l-2 ${
-                      selectedIdx === index 
-                      ? "bg-[#FE7F0E] text-black border-white translate-x-2 font-bold shadow-[0_0_20px_rgba(254,127,14,0.3)]" 
-                      : "bg-white/[0.03] text-white/90 border-transparent hover:bg-white/5 hover:text-white"
+                      selectedIdx === index
+                        ? "bg-[#FE7F0E] text-black border-white translate-x-2 font-bold shadow-[0_0_20px_rgba(254,127,14,0.3)]"
+                        : "bg-white/[0.03] text-white/90 border-transparent hover:bg-white/5 hover:text-white"
                     }`}
                   >
                     {service.name.toUpperCase()}
@@ -331,23 +455,21 @@ export default function DetalleServicio({ params }: { params: Promise<{ slug: st
             </div>
 
             <div className="bg-[#FE7F0E] p-[1px] group transition-transform hover:-translate-y-1">
-               <button 
-               onClick={() =>
+              <button
+                onClick={() =>
                   window.open(
                     `https://wa.me/51970478503?text=${encodeURIComponent("Hola, me gustaría contactarlos para más información.")}`,
                     "_blank"
                   )
                 }
-                 style={{fontFamily: "var(--font-michroma)"}} 
-                 className="w-full bg-[#000A15] text-white py-8 text-[11px] tracking-[4px] font-bold group-hover:bg-transparent group-hover:text-black transition-all uppercase"
-                >
-                 Solicitar Cotizacion
-               </button>
+                style={{ fontFamily: "var(--font-michroma)" }}
+                className="w-full bg-[#000A15] text-white py-8 text-[11px] tracking-[4px] font-bold group-hover:bg-transparent group-hover:text-black transition-all uppercase"
+              >
+                Solicitar Cotizacion
+              </button>
             </div>
-            
           </div>
         </div>
-
       </section>
     </main>
   );
