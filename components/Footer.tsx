@@ -146,14 +146,14 @@ const Footer = () => {
           </p>
           <div className="flex gap-8">
             <a
-              href="#"
+              href="/politicas"
               className="text-white/50 hover:text-white text-xs uppercase tracking-widest transition-colors"
               style={{ fontFamily: "var(--font-rajdhani)" }}
             >
               Privacidad
             </a>
             <a
-              href="#"
+              href="/terminos"
               className="text-white/50 hover:text-white text-xs uppercase tracking-widest transition-colors"
               style={{ fontFamily: "var(--font-rajdhani)" }}
             >

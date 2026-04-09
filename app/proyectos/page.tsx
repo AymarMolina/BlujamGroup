@@ -9,17 +9,29 @@ import { gsap } from 'gsap';
 const CATEGORIES = ["TODOS", "INFRAESTRUCTURA", "SOFTWARE", "SEGURIDAD", "AUTOMATIZACIÓN"];
 
 const PROJECTS = [
-  { id: 1, category: 'INFRAESTRUCTURA', service: 'Outsourcing y Soporte TI', img: '/icons/servicios/infra/infraestructura-ti-soporte-tecnico-empresas.webp', url: '/servicios/infraestructura-y-soporte' },
-  { id: 2, category: 'INFRAESTRUCTURA', service: 'Infraestructura TI', img: '/icons/servicios/infra/infraestructura-ti-soporte-tecnico-empresas.webp', url: '/servicios/infraestructura-y-soporte' },
-  { id: 3, category: 'INFRAESTRUCTURA', service: 'Cableado Estructurado', img: '/icons/servicios/infra/infraestructura-ti-soporte-tecnico-empresas.webp', url: '/servicios/infraestructura-y-soporte' },
-  { id: 4, category: 'INFRAESTRUCTURA', service: 'Energía y UPS', img: '/icons/servicios/infra/infraestructura-ti-soporte-tecnico-empresas.webp', url: '/servicios/infraestructura-y-soporte' },
-  { id: 5, category: 'SOFTWARE', service: 'Web & E-commerce', img: '/icons/servicios/soft/desarrollo-software-soluciones-digitales-empresas.webp', url: '/servicios/desarrollo-de-software' },
-  { id: 6, category: 'SOFTWARE', service: 'Apps Móviles', img: '/icons/servicios/soft/desarrollo-software-soluciones-digitales-empresas.webp', url: '/servicios/desarrollo-de-software' },
-  { id: 7, category: 'SOFTWARE', service: 'Sistemas a Medida', img: '/icons/servicios/soft/desarrollo-software-soluciones-digitales-empresas.webp', url: '/servicios/desarrollo-de-software' },
-  { id: 8, category: 'SEGURIDAD', service: 'ISO 27001 & Ciberseguridad', img: '/icons/servicios/segu/ciberseguridad-seguridad-informacion-empresas.webp', url: '/servicios/seguridad-de-la-informacion' },
-  { id: 9, category: 'SEGURIDAD', service: 'Gobierno de TI', img: '/icons/servicios/segu/ciberseguridad-seguridad-informacion-empresas.webp', url: '/servicios/seguridad-de-la-informacion' },
-  { id: 10, category: 'AUTOMATIZACIÓN', service: 'Inteligencia Artificial', img: '/icons/servicios/automa/automatizacion-inteligencia-artificial-empresas.webp', url: '/servicios/automatizacion-e-ia' },
-  { id: 11, category: 'AUTOMATIZACIÓN', service: 'RPA & Bots', img: '/icons/servicios/automa/automatizacion-inteligencia-artificial-empresas.webp', url: '/servicios/automatizacion-e-ia' },
+  { id: 1, category: 'INFRAESTRUCTURA', service: 'Outsourcing y Soporte TI', img: '/icons/servicios/infra/proyecto-infra-1.webp', url: '/servicios/infraestructura-y-soporte' },
+  { id: 2, category: 'INFRAESTRUCTURA', service: 'Infraestructura TI', img: '/icons/servicios/infra/proyecto-infra-2.webp', url: '/servicios/infraestructura-y-soporte' },
+  { id: 3, category: 'INFRAESTRUCTURA', service: 'Cableado Estructurado', img: '/icons/servicios/infra/proyecto-infra-3.webp', url: '/servicios/infraestructura-y-soporte' },
+  { id: 4, category: 'INFRAESTRUCTURA', service: 'Energía y UPS', img: '/icons/servicios/infra/proyecto-infra-4.webp', url: '/servicios/infraestructura-y-soporte' },
+  { id: 5, category: 'INFRAESTRUCTURA', service: 'Mantenimiento Preventivo y Correctivo', img: '/icons/servicios/infra/proyecto-infra-5.webp', url: '/servicios/infraestructura-y-soporte' },
+  { id: 6, category: 'SOFTWARE', service: 'Web & E-commerce', img: '/icons/servicios/soft/proyecto-software-1.webp', url: '/servicios/desarrollo-de-software?servicio=web-ecommerce' },
+  { id: 7, category: 'SOFTWARE', service: 'Web & E-commerce', img: '/icons/servicios/soft/proyecto-software-2.webp', url: '/servicios/desarrollo-de-software?servicio=web-ecommerce' },
+  { id: 8, category: 'SOFTWARE', service: 'Web & E-commerce', img: '/icons/servicios/soft/proyecto-software-3.webp', url: '/servicios/desarrollo-de-software?servicio=web-ecommerce' },
+  { id: 9, category: 'SOFTWARE', service: 'Apps Móviles', img: '/icons/servicios/soft/proyecto-software-4.webp', url: '/servicios/desarrollo-de-software?servicio=mobile' },
+  { id: 10, category: 'SOFTWARE', service: 'Apps Móviles', img: '/icons/servicios/soft/proyecto-software-5.webp', url: '/servicios/desarrollo-de-software?servicio=mobile' },
+  { id: 11, category: 'SOFTWARE', service: 'Apps Móviles', img: '/icons/servicios/soft/proyecto-software-6.webp', url: '/servicios/desarrollo-de-software?servicio=mobile' },
+  { id: 12, category: 'SOFTWARE', service: 'Sistemas a Medida', img: '/icons/servicios/soft/proyecto-software-7.webp', url: '/servicios/desarrollo-de-software?servicio=medida' },
+  { id: 13, category: 'SOFTWARE', service: 'Sistemas a Medida', img: '/icons/servicios/soft/proyecto-software-8.webp', url: '/servicios/desarrollo-de-software?servicio=medida' },
+  { id: 14, category: 'SEGURIDAD', service: 'Implementación de SGSI (ISO 27001)', img: '/icons/servicios/segu/proyecto-segu-1.webp', url: '/servicios/seguridad-de-la-informacion' },
+  { id: 15, category: 'SEGURIDAD', service: 'Gobierno de TI', img: '/icons/servicios/segu/proyecto-segu-2.webp', url: '/servicios/seguridad-de-la-informacion' },
+  { id: 16, category: 'SEGURIDAD', service: 'Auditoría y Evaluación de Sistemas de Información', img: '/icons/servicios/segu/proyecto-segu-3.webp', url: '/servicios/seguridad-de-la-informacion' },
+  { id: 17, category: 'SEGURIDAD', service: 'Gestión de Vulnerabilidades en Aplicaciones', img: '/icons/servicios/segu/proyecto-segu-4.webp', url: '/servicios/seguridad-de-la-informacion' },
+  { id: 18, category: 'SEGURIDAD', service: 'Cumplimiento Normativo en Seguridad de la Información', img: '/icons/servicios/segu/proyecto-segu-5.webp', url: '/servicios/seguridad-de-la-informacion' },
+  { id: 19, category: 'SEGURIDAD', service: 'Capacitación en Seguridad de la Información', img: '/icons/servicios/segu/proyecto-segu-6.webp', url: '/servicios/seguridad-de-la-informacion' },
+  { id: 20, category: 'SEGURIDAD', service: 'Acompañamiento para Certificaciones', img: '/icons/servicios/segu/proyecto-segu-7.webp', url: '/servicios/seguridad-de-la-informacion' },
+  { id: 21, category: 'AUTOMATIZACIÓN', service: 'Automatización de Procesos de Negocio (RPA)', img: '/icons/servicios/automa/automatizacion-inteligencia-artificial-empresas.webp', url: '/servicios/proyecto-auto-1.webp' },
+  { id: 22, category: 'AUTOMATIZACIÓN', service: 'Desarrollo de Chatbots y Asistentes Virtuales', img: '/icons/servicios/automa/automatizacion-inteligencia-artificial-empresas.webp', url: '/servicios/proyecto-auto-2.webp' },
+  { id: 23, category: 'AUTOMATIZACIÓN', service: 'Soluciones de Inteligencia Artificial Aplicadas al Negocio', img: '/icons/servicios/automa/automatizacion-inteligencia-artificial-empresas.webp', url: '/servicios/proyecto-auto-3.webp' },
 ];
 
 const getCategoryIcon = (category: string) => {
@@ -40,7 +52,6 @@ export default function GaleriaProyectos() {
     ? PROJECTS 
     : PROJECTS.filter(p => p.category === filter);
 
-  // Animación GSAP al cambiar el filtro
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(".project-card", 
@@ -99,7 +110,6 @@ export default function GaleriaProyectos() {
         </div>
       </div>
 
-      {/* Grid con Referencia para GSAP */}
       <div 
         ref={gridRef}
         className="max-w-7xl mx-auto columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6"

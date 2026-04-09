@@ -30,7 +30,6 @@ export default function ServiciosPage() {
         ease: "expo.out",
       });
 
-      // Cards con ScrollTrigger
       gsap.from(".service-card", {
         y: 80,
         opacity: 0,
@@ -44,7 +43,6 @@ export default function ServiciosPage() {
         }
       });
 
-      // Footer
       gsap.from(".footer-line", {
         opacity: 0,
         y: 20,

@@ -83,7 +83,6 @@ export default function NosotrosPage() {
         }
       `}</style>
 
-      {/* HERO */}
       <section className="nosotros-hero relative pt-48 pb-28 px-6">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#ff7a00]/10 blur-[150px] rounded-full -mr-32 -mt-32" />
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center relative z-10">
@@ -119,7 +118,6 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* SERVICE CARDS */}
       <section className="py-24 px-6 relative services-grid">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
           {[
@@ -140,13 +138,11 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* BANNER IMAGE */}
       <section className="nosotros-banner relative h-[50vh] md:h-[60vh] overflow-hidden my-10">
         <Image src="/icons/servicios/hero-1.webp" alt="Cultura Blujam" fill className="object-cover opacity-40 scale-110" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#000A15] via-transparent to-[#000A15]" />
       </section>
 
-      {/* STATS + MOSAIC */}
       <section className="py-24 px-6 relative">
         <div className="max-w-7xl mx-auto">
           <div className="nosotros-stats-wrap bg-[#001E3C]/20 backdrop-blur-2xl border border-white/5 overflow-hidden grid lg:grid-cols-12">

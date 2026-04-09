@@ -8,7 +8,6 @@ export default function ContactoPage() {
   return (
     <main className="bg-[#000A15] text-white min-h-screen selection:bg-[#ff7a00] selection:text-black overflow-hidden">
 
-      {/* 1. HERO */}
       <section className="relative pt-28 sm:pt-36 md:pt-48 pb-10 sm:pb-16 px-4 sm:px-6 text-center">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-[#ff7a00]/5 blur-[150px] rounded-full -mt-40 pointer-events-none" />
 
@@ -29,11 +28,9 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      {/* 2. CONTENEDOR VIDRIOSO */}
       <section className="pb-16 sm:pb-24 md:pb-32 px-4 sm:px-6 relative">
         <div className="max-w-7xl mx-auto relative group">
 
-          {/* Imagen de fondo */}
           <div className="absolute inset-0 z-0 overflow-hidden border border-white/10">
             <Image
               src="/icons/servicios/serv3.webp"
@@ -43,11 +40,9 @@ export default function ContactoPage() {
             />
           </div>
 
-          {/* Glassmorphism */}
           <div className="relative z-10 p-5 sm:p-8 md:p-12 lg:p-16 bg-[#D9D9D9]/15 border border-white/10">
             <div className="grid lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-start">
 
-              {/* FORMULARIO */}
               <div className="lg:col-span-7">
                 <h3
                   className="text-[#ff7a00] text-base sm:text-xl uppercase mb-6 sm:mb-10 tracking-widest"
@@ -126,7 +121,6 @@ export default function ContactoPage() {
                 </form>
               </div>
 
-              {/* INFO DE CONTACTO */}
               <div className="lg:col-span-5 flex flex-col gap-6 sm:gap-8 border-t border-white/10 pt-8 lg:border-t-0 lg:pt-0 lg:border-l lg:border-white/10 lg:pl-16">
                 <div>
                   <h3

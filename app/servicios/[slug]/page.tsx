@@ -176,11 +176,10 @@ export default function DetalleServicio({ params }: { params: Promise<{ slug: st
     );
   }, [selectedIdx]);
 
-  // Cierra sidebar móvil al cambiar servicio
   const handleServiceSelect = (index: number) => {
     setSelectedIdx(index);
     setSidebarOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    document.getElementById("servicio-detalle")?.scrollIntoView({ behavior: "smooth" });
   };
 
   if (!categoria || !current) return null;
@@ -191,7 +190,6 @@ export default function DetalleServicio({ params }: { params: Promise<{ slug: st
         <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
       </div>
 
-      {/* Hero */}
       <section className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] pt-16 sm:pt-20 flex items-center px-4 sm:px-6 md:px-10 overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 z-0">
           <img src={categoria.image} className="w-full h-full object-cover" alt="" />
@@ -218,7 +216,6 @@ export default function DetalleServicio({ params }: { params: Promise<{ slug: st
         </div>
       </section>
 
-      {/* Botón flotante de especialidades en móvil */}
       <div className="lg:hidden fixed bottom-6 right-4 z-50 flex flex-col items-end gap-3">
         {sidebarOpen && (
           <div className="bg-[#0D1520] border border-white/10 p-5 w-72 max-h-[60vh] overflow-y-auto shadow-2xl">
@@ -262,13 +259,10 @@ export default function DetalleServicio({ params }: { params: Promise<{ slug: st
         )}
       </div>
 
-      {/* Contenido principal */}
-      <section className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-24 grid grid-cols-12 gap-6 sm:gap-10 lg:gap-20 items-start">
+      <section id="servicio-detalle" className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-24 grid grid-cols-12 gap-6 sm:gap-10 lg:gap-20 items-start">
 
-        {/* Columna principal */}
         <div className="col-span-12 lg:col-span-8" ref={contentRef}>
 
-          {/* Slogan + descripción */}
           <div className="mb-14 sm:mb-20 md:mb-24">
             <h2
               style={{ fontFamily: "var(--font-michroma)" }}
@@ -283,8 +277,6 @@ export default function DetalleServicio({ params }: { params: Promise<{ slug: st
               {current.fullDescription}
             </p>
           </div>
-
-          {/* Desafíos + imagen */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 md:gap-16 mb-20 sm:mb-28 md:mb-32">
             <div className="space-y-5 sm:space-y-8">
               <h3
@@ -320,7 +312,6 @@ export default function DetalleServicio({ params }: { params: Promise<{ slug: st
             </div>
           </div>
 
-          {/* Alcance del servicio */}
           <div className="mb-20 sm:mb-28 md:mb-32">
             <h3
               style={{ fontFamily: "var(--font-michroma)" }}
@@ -343,7 +334,6 @@ export default function DetalleServicio({ params }: { params: Promise<{ slug: st
             </div>
           </div>
 
-          {/* Metodología */}
           <div className="mb-20 sm:mb-28 md:mb-32 bg-white/[0.03] p-6 sm:p-10 md:p-16 border border-white/5">
             <h3
               style={{ fontFamily: "var(--font-michroma)" }}
@@ -372,7 +362,6 @@ export default function DetalleServicio({ params }: { params: Promise<{ slug: st
             </div>
           </div>
 
-          {/* Quote + Benefits */}
           <div className="space-y-10 sm:space-y-16">
             <div className="text-left sm:text-center md:text-right italic px-0 sm:px-4">
               <p
@@ -423,7 +412,6 @@ export default function DetalleServicio({ params }: { params: Promise<{ slug: st
           </div>
         </div>
 
-        {/* Sidebar — solo visible en lg+ */}
         <div className="hidden lg:block col-span-4 relative h-full">
           <div className="sticky top-32 space-y-8 pt-4">
             <div className="bg-[#0D1520] border border-white/10 p-10 relative overflow-hidden">
