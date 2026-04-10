@@ -73,24 +73,28 @@ export default function Navbar() {
     {
       title: "SEGURIDAD & GOBIERNO",
       links: [
-        { name: "ISO 27001", href: "/servicios/seguridad-de-la-informacion?servicio=sgsi" },
-        { name: "Gobierno de TI", href: "/servicios/seguridad-de-la-informacion?servicio=gobierno" },
-        { name: "Auditoría de Sistemas", href: "/servicios/seguridad-de-la-informacion?servicio=auditoria" },
+        { name: "Implementación de SGSI (ISO 27001)", href: "/servicios/seguridad-de-la-informacion?servicio=sgsi" },
+        { name: "Gobierno de TI para Sistemas de Información", href: "/servicios/seguridad-de-la-informacion?servicio=gobierno" },
+        { name: "Auditoría y Evaluación de Sistemas", href: "/servicios/seguridad-de-la-informacion?servicio=auditoria" },
+        { name: "Gestión de Vulnerabilidades", href: "/servicios/seguridad-de-la-informacion?servicio=vulnerabilidades" },
+        { name: "Cumplimiento Normativo", href: "/servicios/seguridad-de-la-informacion?servicio=cumplimiento" },
+        { name: "Capacitación en Seguridad", href: "/servicios/seguridad-de-la-informacion?servicio=capacitacion" },
       ],
     },
     {
       title: "SOFTWARE & DIGITAL",
       links: [
-        { name: "Desarrollo Web", href: "/servicios/desarrollo-de-software?servicio=web-ecommerce" },
-        { name: "Aplicaciones Moviles", href: "/servicios/desarrollo-de-software?servicio=mobile" },
-        { name: "Sistemas a Medida", href: "/servicios/desarrollo-de-software?servicio=medida" },
+        { name: "Desarrollo Web y E-commerce", href: "/servicios/desarrollo-de-software?servicio=web-ecommerce" },
+        { name: "Desarrollo de Aplicaciones Móviles", href: "/servicios/desarrollo-de-software?servicio=mobile" },
+        { name: "Sistemas Empresariales a Medida", href: "/servicios/desarrollo-de-software?servicio=medida" },
       ],
     },
     {
       title: "IA & AUTOMATIZACIÓN",
       links: [
-        { name: "Procesos RPA", href: "/servicios/automatizacion-e-ia?servicio=rpa" },
-        { name: "Chatbots", href: "/servicios/automatizacion-e-ia?servicio=chatbots" },
+        { name: "Automatización de Procesos (RPA)", href: "/servicios/automatizacion-e-ia?servicio=rpa" },
+        { name: "Chatbots y Asistentes Virtuales", href: "/servicios/automatizacion-e-ia?servicio=chatbots" },
+        { name: "IA Aplicadas al Negocio", href: "/servicios/automatizacion-e-ia?servicio=ia-aplicada" },
       ],
     },
   ];
@@ -99,11 +103,11 @@ export default function Navbar() {
     {
       title: "SOPORTE & GESTIÓN",
       links: [
-        { name: "Outsourcing TI", href: "/servicios/infraestructura-y-soporte?servicio=outsourcing" },
-        { name: "Administracion", href: "/servicios/infraestructura-y-soporte?servicio=administracion" },
+        { name: "Outsourcing y Soporte TI", href: "/servicios/infraestructura-y-soporte?servicio=outsourcing" },
+        { name: "Administración de Infraestructura", href: "/servicios/infraestructura-y-soporte?servicio=administracion" },
         { name: "Cableado Estructurado", href: "/servicios/infraestructura-y-soporte?servicio=cableado" },
-        { name: "Energia y continuidad", href: "/servicios/infraestructura-y-soporte?servicio=energia" },
-        { name: "Mantenimiento", href: "/servicios/infraestructura-y-soporte?servicio=mantenimiento" },
+        { name: "Energía y Continuidad (UPS)", href: "/servicios/infraestructura-y-soporte?servicio=energia" },
+        { name: "Mantenimiento Preventivo y Correctivo", href: "/servicios/infraestructura-y-soporte?servicio=mantenimiento" },
       ],
     },
   ];

@@ -36,9 +36,9 @@ const PROJECTS = [
   { id: 16, category: 'SEGURIDAD', service: 'Gestión de Vulnerabilidades', title: 'Pentesting de Aplicaciones Web', img: '/icons/servicios/segu/proyecto-segu-4.webp', url: '/servicios/seguridad-de-la-informacion' },
 
   // AUTOMATIZACIÓN
-  { id: 17, category: 'AUTOMATIZACIÓN', service: 'RPA (Automatización de Procesos)', title: 'Automatización de Facturación Masiva', img: '/icons/servicios/automa/proyecto-auto-1.webp', url: '/servicios/proyecto-auto-1.webp' },
-  { id: 18, category: 'AUTOMATIZACIÓN', service: 'Chatbots y Asistentes Virtuales', title: 'Asistente IA para Atención al Cliente', img: '/icons/servicios/automa/proyecto-auto-2.webp', url: '/servicios/proyecto-auto-2.webp' },
-  { id: 19, category: 'AUTOMATIZACIÓN', service: 'IA Aplicada al Negocio', title: 'Análisis Predictivo de Ventas con ML', img: '/icons/servicios/automa/proyecto-auto-3.webp', url: '/servicios/proyecto-auto-3.webp' },
+  { id: 17, category: 'AUTOMATIZACIÓN', service: 'RPA (Automatización de Procesos)', title: 'Automatización de Facturación Masiva', img: '/icons/servicios/automa/proyecto-auto-1.webp', url: '/servicios/automatizacion-e-ia?servicio=rpa' },
+  { id: 18, category: 'AUTOMATIZACIÓN', service: 'Chatbots y Asistentes Virtuales', title: 'Asistente IA para Atención al Cliente', img: '/icons/servicios/automa/proyecto-auto-2.webp', url: '/servicios/automatizacion-e-ia?servicio=chatbots' },
+  { id: 19, category: 'AUTOMATIZACIÓN', service: 'IA Aplicada al Negocio', title: 'Análisis Predictivo de Ventas con ML', img: '/icons/servicios/automa/proyecto-auto-3.webp', url: '/servicios/automatizacion-e-ia?servicio=ia-aplicada' },
 ];
 
 const getCategoryIcon = (category: string) => {

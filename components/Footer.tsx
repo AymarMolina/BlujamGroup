@@ -37,7 +37,7 @@ const footerData = [
     links: [
       { name: "Automatización de Procesos (RPA)", href: "/servicios/automatizacion-e-ia?servicio=rpa" },
       { name: "Chatbots y Asistentes Virtuales", href: "/servicios/automatizacion-e-ia?servicio=chatbots" },
-      { name: "Soluciones de IA Aplicadas", href: "/servicios/automatizacion-e-ia?servicio=ia-aplicada" },
+      { name: "IA Aplicadas al Negocio", href: "/servicios/automatizacion-e-ia?servicio=ia-aplicada" },
     ],
   },
 ];
