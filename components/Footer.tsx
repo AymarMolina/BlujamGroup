@@ -145,20 +145,28 @@ const Footer = () => {
             © {new Date().getFullYear()} BLUJAM GROUP. TECH GLOBAL SOLUTIONS. TODOS LOS DERECHOS RESERVADOS.
           </p>
           <div className="flex gap-8">
-            <a
+            <Link
               href="/politicas"
               className="text-white/50 hover:text-white text-xs uppercase tracking-widest transition-colors"
               style={{ fontFamily: "var(--font-rajdhani)" }}
             >
               Privacidad
-            </a>
-            <a
+            </Link>
+            <Link
               href="/terminos"
               className="text-white/50 hover:text-white text-xs uppercase tracking-widest transition-colors"
               style={{ fontFamily: "var(--font-rajdhani)" }}
             >
               Términos
-            </a>
+            </Link>
+
+            <Link
+              href="/reclamaciones"
+              className="text-orange-500/70 hover:text-orange-500 text-xs uppercase tracking-widest transition-colors"
+              style={{ fontFamily: "var(--font-rajdhani)" }}
+            >
+              Libro de Reclamaciones
+            </Link>
           </div>
         </div>
       </div>
